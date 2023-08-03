@@ -1,11 +1,20 @@
 import React from "react";
 import "./style.css";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import LandingPage from './components/LandingPage';
+import Register from './components/Register';
+import Login from './components/Login';
 
-export default function App() {
+const App = () => {
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
+      </Switch>
+    </Router>
   );
-}
+};
+
+export default App;
